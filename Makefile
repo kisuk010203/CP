@@ -22,6 +22,9 @@ compile:
 test: compile
 	@$(PY) $(TST) $(ROUND) $(PROB)
 
+run: compile
+	@$(EXE)
+
 setup:
 	@$(PY) make-cf-dir.py $(URL)
 
