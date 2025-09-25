@@ -16,7 +16,7 @@ def run_test(round_num, prob):
     round_dir = f"Round{round_num}"
     cpp_file = os.path.join(round_dir, f"{prob}.cpp")
     exe_file = os.path.join(round_dir, f"{prob}.out")
-    tc_dir = os.path.join(round_dir, "testcases", prob)
+    tc_dir = os.path.join(round_dir, "tests", prob)
 
     if not os.path.exists(cpp_file):
         print(f"{RED}Source file not found: {cpp_file}{RESET}")
