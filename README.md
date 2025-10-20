@@ -57,6 +57,14 @@ Round1053/
 
 ## Usage
 
+### 0️⃣ Setting up requirements
+
+We will use a `venv` to setup your environment. Run 
+
+```bash
+source env.sh
+```
+
 ### 1️⃣ Setup a Round
 
 Fetch problems, generate templates, and scrape testcases:
