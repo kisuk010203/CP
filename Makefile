@@ -1,6 +1,3 @@
-# Makefile for Codeforces local testing
-# Usage: make problem=A round=1053
-
 PY = python3
 TST = tester.py
 ROUND = $(round)
@@ -17,12 +14,15 @@ compile:
 		echo "Source file not found: $(CPP)"; exit 1; \
 	fi
 	@echo "Compiling $(CPP)..."
-	g++ -std=c++17 -O2 -o $(EXE) $(CPP)
+	g++ -std=c++17 -O2 -o $(EXE) $(CPP) -g
 
 test: compile
 	@$(PY) $(TST) $(ROUND) $(PROB)
 
 run: compile
+	@$(EXE)
+
+nb-run: # No-Build run
 	@$(EXE)
 
 setup:
