@@ -24,7 +24,8 @@ def setup_contest(contest_id: int):
     data = r.json()
     if data["status"] != "OK":
         raise RuntimeError("API error")
-
+    for k, v in data["result"].items():
+        print(f"{k}: {v}")
     contest = data["result"]["contest"]
     problems = data["result"]["problems"]
 

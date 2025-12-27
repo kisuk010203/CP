@@ -30,4 +30,5 @@ setup:
 
 clean:
 	@rm -f Round$(ROUND)/*.out
+	@rm -rf Round$(ROUND)/*.dSYM
 	@echo "Cleaned executables."
