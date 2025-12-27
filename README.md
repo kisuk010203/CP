@@ -107,7 +107,7 @@ Test 3: ⏱ TLE
 ### 3️⃣ Clean Compiled Executables
 
 ```bash
-make clean round=1053 problem=A
+make clean ROUND=1053 
 ```
 
 ## Notes
