@@ -1,5 +1,6 @@
 PY = python3
 TST = tester.py
+SHELL := /bin/zsh
 ROUND = $(round)
 URL = $(url)
 PROB = $(problem)
@@ -15,6 +16,9 @@ compile:
 	fi
 	@echo "Compiling $(CPP)..."
 	g++ -std=c++17 -O2 -o $(EXE) $(CPP) -g
+
+deps:
+	bash env.sh
 
 test: compile
 	@$(PY) $(TST) $(ROUND) $(PROB)
