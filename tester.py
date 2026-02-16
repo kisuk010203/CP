@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-import os, sys, subprocess, glob
+import os
+import sys
+import subprocess
+import glob
 
 TIME_LIMIT = 2
 
@@ -11,6 +14,8 @@ MAGENTA = "\033[95m"
 CYAN = "\033[96m"
 RESET = "\033[0m"
 
+def normalize(s):
+    return "\n".join(line.rstrip() for line in s.strip().splitlines())
 
 def run_test(round_num, prob):
     round_dir = f"Round{round_num}"
@@ -62,7 +67,7 @@ def run_test(round_num, prob):
             with open(outfile, "r") as fexp:
                 expected = fexp.read().strip()
             got = proc.stdout.strip()
-            if got == expected:
+            if normalize(got) == normalize(expected):
                 print(f"Test {base}: {GREEN}OK{RESET}")
             else:
                 print(f"Test {base}: {RED}WA{RESET}")
